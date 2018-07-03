@@ -2,10 +2,37 @@
 <html lang= "en">
   <head>
     <title>Number Guesser</title>
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    
+    <header class="page-header">
+      <h1 class="game-title">
+        <span class="first-heading-word">Number</span>
+        <span class="second-heading-word">Guesser</span>
+      </h1>
+    </header>
+    <main class="game-play-area">
+      <section class="game-inputs-buttons">
+        <form class="play-game">
+          <input class="user-guess" type="number" name="user-guess" placeholder="Enter your guess" step="1">
+          <br>
+          <input class="guess-range min-guess" type="number" name="user-guess-min-range" placeholder="Minimum" step="1">
+          <input class="guess-range max-guess" id="range" type="number" name="user-guess-max-range" placeholder="Maximum" step="1">
+          <br>
+          <button class="guess-button" disabled="true">Submit</button>
+          <button class="clear-button" disabled="true">Clear</button>
+        </form> 
+      </section> 
+      <section class="game-results-area">
+        <h6 class="game-intro">Your last guess was</h6>
+        <p class="display-guess">25</p>
+        <h6 class="game-feedback">Time to play the game!</h6>
+        <button class="reset-button" disabled="true">Reset</button>  
+      </section>
+    </main>
+    <script type="text/javascript" src="script.js"></script>
   </body>
   
 </html>
