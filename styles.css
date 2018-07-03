@@ -1,0 +1,96 @@
+/*Applied througout the web page*/
+body {
+  font-family: 'Open Sans', sans-serif;
+  height: 100vh;
+  margin: 0; 
+  width: 100vw;
+}
+
+/*Top of the web page*/
+.page-header {
+  background-color: #404041;
+  height: 15vh; 
+  position: relative;
+  bottom: 15px;
+  text-align: center; 
+  width: 100vw; 
+}
+
+.game-title {
+  font-size: 3rem;
+  padding-top: 25px; 
+}
+
+.first-heading-word {
+  color: #ED458B;
+  font-weight: 700; 
+}
+
+.second-heading-word {
+  color: #E6E7E8;
+  font-weight: 300
+}
+
+/*Text content and game play area*/
+.game-inputs-buttons {
+  height: 200px;
+  margin: 0 auto;
+  text-align: center; 
+  width: 400px;
+}
+
+.user-guess {
+  height: 25px;
+  width: 300px;
+  text-align: center;
+}
+
+.guess-range {
+  margin: 5px auto; 
+  text-align: center; 
+}
+
+.game-results-area {
+  margin: 0 auto;
+  text-align: center; 
+}
+
+section h6 {
+  color: #404041;
+  font-size: 2rem;
+  font-weight: 300;  
+}
+
+.display-guess {
+  color: #EB008B;
+  padding: 10px;
+  font-size: 15rem;
+  font-weight: 300; 
+}
+
+/*Buttons*/
+button {
+  background-color: #929497; 
+  border-radius: 14px;
+  border: none;
+  color: white;
+  padding: 5px 60px;
+}
+
+.reset-button {
+  margin-top: 30px;
+  width: 50%; 
+}
+
+button:hover {
+  background-color: #EB008D;
+}
+
+button:active {
+  background-color: #929497;
+}
+
+button:disabled {
+  background-color: #D0d2d3; 
+}
+
