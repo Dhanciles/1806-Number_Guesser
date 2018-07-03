@@ -10,7 +10,7 @@ var rangeButton = document.querySelector('.submit-range')
 var displayGuess = document.querySelector('.display-guess');
 var gameIntro = document.querySelector('.game-intro');
 var gameFeedBack = document.querySelector('.game-feedback');
-
+var winUpdate = expandMinMax()
 
 var guessCount = 1; 
 var minValue = 1; 
@@ -55,8 +55,10 @@ function checkGuess(guess) {
     gameIntro.innerText = 'Your number is'; 
     gameFeedBack.innertext = 'Too High'; 
   } else if (guess === randomNumber) {
+    expandMinMax();
     gameIntro.innerText = 'Boom!'; 
-    gameFeedBack.innerText = 'You Are A Genius'; 
+    gameFeedBack.innerText = `You Are A Genius...New Min: ${minValue} and New Max: ${maxValue}`; 
+    console.log(minValue, maxValue); 
   }
 }
 
@@ -74,9 +76,15 @@ function enableButtons(event) {
 
 function checkRange() {
   event.preventDefault(); 
-  randomNumber = getRandomNumber(parseInt(minGuess.value), parseInt(maxGuess.value)); 
+  minValue = parseInt(minGuess.value); 
+  maxValue = parseInt(maxGuess.value); 
+  randomNumber = getRandomNumber(minValue, maxValue); 
   console.log(randomNumber); 
-  console.log(minGuess.value, maxGuess.value); 
+}
+
+function expandMinMax() {
+  minValue -=10; 
+  maxValue +=10; 
 }
 
 
