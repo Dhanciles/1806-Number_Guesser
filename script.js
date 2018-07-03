@@ -1,6 +1,6 @@
 // Variables
 var userGuess = document.querySelector('.user-guess');
-var guessInput = parseInt(userGuess.value);
+// var guessInput = parseInt(userGuess.value);
 var minGuess = document.querySelector('.min-guess'); 
 var maxGuess = document.querySelector('.max-guess');
 var guessButton = document.querySelector('.guess-button');
@@ -11,7 +11,8 @@ var gameIntro = document.querySelector('.game-intro');
 var gameFeedBack = document.querySelector('.game-feedback');
 var minValue = 1; 
 var maxValue = 100; 
-var randomNumber = Math.floor(Math.random() * 100) + 1; 
+var randomNumber = getRandomNumber(1,100); 
+console.log(randomNumber); 
 var guessCount = 1; 
 
 // Event Listeners 
@@ -21,9 +22,8 @@ clearButton.addEventListener('click', clearInput);
 resetButton.addEventListener('click', resetGame);
 
 // Functions 
-function getRandomNumber() {
-  console.log(randomNumber);
-  return (randomNumber); 
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;  
 }
 
 function clearInput(event) {
@@ -38,21 +38,19 @@ function playGame(event) {
   // var guessInput = parseInt(userGuess.value)
   guessButton.disabled = true; 
   clearButton.disabled = true; 
+  checkGuess(parseInt(userGuess.value));
   clearInput(event);
-  checkGuess(guessInput);
 }
 
-function checkGuess(guessInput) {
-  if (guessInput < 1 || guessInput > 100) {
-    gameIntro.innerText = 'Your number is'; 
-    gameFeedBack.innerText = 'Out of range'; 
-  } else if (userGuess < randomNumber) {
+function checkGuess(guess) {
+    console.log(guess)
+    if (guess < randomNumber) {
     gameIntro.innerText = 'Your number is'; 
     gameFeedBack.innerText = 'Too Low'; 
-  } else if (userGuess > randomNumber) {
+  } else if (guess > randomNumber) {
     gameIntro.innerText = 'Your number is'; 
     gameFeedBack.innertext = 'Too High'; 
-  } else if (userGuess === randomNumber) {
+  } else if (guess === randomNumber) {
     gameIntro.innerText = 'Boom!'; 
     gameFeedBack.innerText = 'You Are A Genius'; 
   }
