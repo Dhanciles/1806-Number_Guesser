@@ -91,7 +91,7 @@ function expandMinMax() {
   maxValue +=10; 
 }
 
-initiateMultiPlayer(event) {
+function initiateMultiPlayer(event) {
 
 
 }
