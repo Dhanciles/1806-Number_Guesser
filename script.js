@@ -8,6 +8,7 @@ var resetButton = document.querySelector('.reset-button');
 var rangeButton = document.querySelector('.submit-range'); 
 var multiPlayerButton = document.querySelector('.multi-player-button'); 
 var scoreCard = document.querySelector('.multi-player-mode');
+var currentPlayer = document.querySelector('.current-player'); 
 var displayGuess = document.querySelector('.display-guess');
 var gameIntro = document.querySelector('.game-intro');
 var gameFeedBack = document.querySelector('.game-feedback');
@@ -47,6 +48,8 @@ function playGame(event) {
   guessButton.disabled = true; 
   clearButton.disabled = true; 
   checkGuess(parseInt(userGuess.value));
+  guessCounter(); 
+  console.log(guessCount); 
   clearInput(event);
 }
 
@@ -59,9 +62,12 @@ function checkGuess(guess) {
     gameIntro.innerText = 'Your number is'; 
     gameFeedBack.innertext = 'Too High'; 
   } else if (guess === randomNumber) {
+    guessCounter(); 
     expandMinMax();
+    randomNumber = getRandomNumber(minValue, maxValue);  
     gameIntro.innerText = 'Boom!'; 
     gameFeedBack.innerText = `You're A Genius...New Min: ${minValue} and New Max: ${maxValue}`; 
+    console.log(randomNumber); 
     console.log(minValue, maxValue); 
     console.log(guessCount);
   }
@@ -94,7 +100,18 @@ function expandMinMax() {
 
 function initiateMultiPlayer(event) {
   scoreCard.classList.toggle('multi-player-mode'); 
+  switchPlayers(); 
 }
 
+function guessCounter() {
+  guessCount++; 
+}
 
+// function switchPlayers() {
+//   guessCounter()
+//   if (guessCount >= 3) {
+//     currentPlayer.innerText = "Player 2 It's Your Turn!"; 
+//     guessCount = 0
+//   }
+// }
 
