@@ -64,22 +64,23 @@ section h6 {
 .display-guess {
   color: #EB008B;
   padding: 10px;
-  font-size: 15rem;
+  font-size: 10rem;
   font-weight: 300; 
 }
 
 /*Buttons*/
-button {
+main button {
   background-color: #929497; 
   border-radius: 14px;
   border: none;
   color: white;
+  margin-top: 8px; 
   padding: 5px 60px;
 }
 
-.reset-button {
-  margin-top: 30px;
-  width: 50%; 
+.game-results-area button {
+  margin-top: 20px;
+  width: 35%; 
 }
 
 button:hover {

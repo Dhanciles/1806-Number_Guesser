@@ -18,19 +18,25 @@
         <form class="play-game">
           <input class="user-guess" type="number" name="user-guess" placeholder="Enter your guess" step="1">
           <br>
-          <input class="guess-range min-guess" type="number" name="user-guess-min-range" placeholder="Min -1" step="1">
-          <input class="guess-range max-guess" id="range" type="number" name="user-guess-max-range" placeholder="Max - 100" step="1">
-          <button class="submit-range">Submit Range</button>
-          <br>
           <button class="guess-button" disabled="true">Submit</button>
+          
+        </form>
+        <br> 
+        <form class="min-max-gameplay">
+          <input class="guess-range min-guess" type="number" name="user-guess-min-range" placeholder="Min - 1" step="1">
+          <input class="guess-range max-guess" id="range" type="number" name="user-guess-max-range" placeholder="Max - 100" step="1">
+          <button class="submit-range"> Range</button>
+          <br>
           <button class="clear-button" disabled="true">Clear</button>
-        </form> 
+        </form>
       </section> 
       <section class="game-results-area">
         <h6 class="game-intro">Your last guess was</h6>
         <p class="display-guess">25</p>
         <h6 class="game-feedback">Time to play the game!</h6>
-        <button class="reset-button" disabled="true">Reset</button>  
+        <button class="reset-button" disabled="true">Reset</button>
+        <br>
+        <button class="multi-player-button">MultiPlayer Mode</button>  
       </section>
     </main>
     <script type="text/javascript" src="script.js"></script>

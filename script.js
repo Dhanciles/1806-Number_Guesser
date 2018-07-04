@@ -33,7 +33,9 @@ function getRandomNumber(min, max) {
 
 function clearInput(event) {
   event.preventDefault();
-  userGuess.value = ''; 
+  userGuess.value = '';
+  minGuess.value = ''; 
+  maxGuess.value = '';  
 }
 
 function playGame(event) {
