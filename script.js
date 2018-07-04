@@ -1,29 +1,30 @@
 // Variables
 var userGuess = document.querySelector('.user-guess');
-// var guessInput = parseInt(userGuess.value);
 var minGuess = document.querySelector('.min-guess'); 
 var maxGuess = document.querySelector('.max-guess');
 var guessButton = document.querySelector('.guess-button');
 var clearButton = document.querySelector('.clear-button'); 
 var resetButton = document.querySelector('.reset-button'); 
-var rangeButton = document.querySelector('.submit-range')
+var rangeButton = document.querySelector('.submit-range'); 
+var multiPlayerButton = document.querySelector('.multi-player-button'); 
 var displayGuess = document.querySelector('.display-guess');
 var gameIntro = document.querySelector('.game-intro');
 var gameFeedBack = document.querySelector('.game-feedback');
 var winUpdate = expandMinMax()
 
-var guessCount = 1; 
+var guessCount = 0; 
 var minValue = 1; 
 var maxValue = 100; 
-var randomNumber = getRandomNumber(1,100); 
+var randomNumber = getRandomNumber(1, 100); 
 console.log(randomNumber); 
 
 // Event Listeners 
-userGuess.addEventListener('keydown', enableButtons)
+userGuess.addEventListener('keydown', enableButtons);
 guessButton.addEventListener('click', playGame);
 clearButton.addEventListener('click', clearInput);
 resetButton.addEventListener('click', resetGame);
 rangeButton.addEventListener('click', checkRange); 
+multiPlayerButton.addEventListener('click', initiateMultiPlayer); 
 
 
 // Functions 
@@ -59,8 +60,9 @@ function checkGuess(guess) {
   } else if (guess === randomNumber) {
     expandMinMax();
     gameIntro.innerText = 'Boom!'; 
-    gameFeedBack.innerText = `You Are A Genius...New Min: ${minValue} and New Max: ${maxValue}`; 
+    gameFeedBack.innerText = `You're A Genius...New Min: ${minValue} and New Max: ${maxValue}`; 
     console.log(minValue, maxValue); 
+    console.log(guessCount);
   }
 }
 
@@ -89,4 +91,8 @@ function expandMinMax() {
   maxValue +=10; 
 }
 
+initiateMultiPlayer(event) {
+
+
+}
 

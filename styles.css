@@ -95,3 +95,16 @@ button:disabled {
   background-color: #D0d2d3; 
 }
 
+/*MultiPlayer Mode*/
+.multi-player-mode {
+  display: none;
+}
+
+.score-card {
+  background-color:#EB008D;
+  color: black; 
+  float: left;
+  height: 100px; 
+  width: 100px 
+}
+

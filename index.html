@@ -15,11 +15,24 @@
     </header>
     <main class="game-play-area">
       <section class="game-inputs-buttons">
+        <div class="multi-player-mode">
+          <p>Player 1 It's Your Turn!</p>
+          <table class="score-card">
+            <tr>
+              <td class="player1-score">Player 1: </td>
+            </tr>
+            <tr>
+              <td class="player2-score">Player 2: </td>
+            </tr>
+            <tr>
+              <td class="series-counter">Best of 3</td>
+            </tr>
+          </table>
+        </div>
         <form class="play-game">
           <input class="user-guess" type="number" name="user-guess" placeholder="Enter your guess" step="1">
           <br>
-          <button class="guess-button" disabled="true">Submit</button>
-          
+          <button class="guess-button" disabled="true">Submit</button> 
         </form>
         <br> 
         <form class="min-max-gameplay">
@@ -41,5 +54,4 @@
     </main>
     <script type="text/javascript" src="script.js"></script>
   </body>
-  
 </html>
