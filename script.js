@@ -7,6 +7,7 @@ var clearButton = document.querySelector('.clear-button');
 var resetButton = document.querySelector('.reset-button'); 
 var rangeButton = document.querySelector('.submit-range'); 
 var multiPlayerButton = document.querySelector('.multi-player-button'); 
+var scoreCard = document.querySelector('.multi-player-mode');
 var displayGuess = document.querySelector('.display-guess');
 var gameIntro = document.querySelector('.game-intro');
 var gameFeedBack = document.querySelector('.game-feedback');
@@ -92,7 +93,8 @@ function expandMinMax() {
 }
 
 function initiateMultiPlayer(event) {
-
-
+  scoreCard.classList.toggle('multi-player-mode'); 
 }
+
+
 
