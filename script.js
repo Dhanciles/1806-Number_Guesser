@@ -5,12 +5,7 @@ var maxGuess = document.querySelector('.max-guess');
 var guessButton = document.querySelector('.guess-button');
 var clearButton = document.querySelector('.clear-button'); 
 var resetButton = document.querySelector('.reset-button'); 
-var rangeButton = document.querySelector('.submit-range'); 
-var multiPlayerButton = document.querySelector('.multi-player-button'); 
-var scoreCard = document.querySelector('.multi-player-mode');
-var currentPlayer = document.querySelector('.current-player');
-var player1Score = document.querySelector('.player1-score'); 
-var player2Score = document.querySelector('.player2-score');  
+var rangeButton = document.querySelector('.submit-range');   
 var displayGuess = document.querySelector('.display-guess');
 var gameIntro = document.querySelector('.game-intro');
 var gameFeedBack = document.querySelector('.game-feedback');
@@ -18,8 +13,7 @@ var winUpdate = expandMinMax()
 var guessCount = 0; 
 var minValue = 1; 
 var maxValue = 100; 
-var randomNumber = getRandomNumber(1, 100); 
-console.log(randomNumber); 
+var randomNumber = getRandomNumber(1, 100);  
 
 // Event Listeners 
 userGuess.addEventListener('keydown', enableButtons);
@@ -27,9 +21,6 @@ guessButton.addEventListener('click', playGame);
 clearButton.addEventListener('click', clearInput);
 resetButton.addEventListener('click', resetGame);
 rangeButton.addEventListener('click', checkRange); 
-multiPlayerButton.addEventListener('click', initiateMultiPlayer); 
-guessButton.addEventListener('click', switchPlayers); 
-
 
 // Functions 
 function getRandomNumber(min, max) {
@@ -50,14 +41,11 @@ function playGame(event) {
   guessButton.disabled = true; 
   clearButton.disabled = true; 
   checkGuess(parseInt(userGuess.value));
-  guessCounter(); 
-  switchPlayers(); 
-  console.log(guessCount); 
+  guessCounter();   
   clearInput(event);
 }
 
 function checkGuess(guess) {
-    console.log(guess)
     if (guess < randomNumber) {
     gameIntro.innerText = 'Your number is'; 
     gameFeedBack.innerText = 'Too Low'; 
@@ -70,9 +58,6 @@ function checkGuess(guess) {
     randomNumber = getRandomNumber(minValue, maxValue);  
     gameIntro.innerText = 'Boom!'; 
     gameFeedBack.innerText = `You're A Genius...New Min: ${minValue} and New Max: ${maxValue}`; 
-    console.log(randomNumber); 
-    console.log(minValue, maxValue); 
-    console.log(guessCount);
   }
 }
 
@@ -93,7 +78,6 @@ function checkRange() {
   minValue = parseInt(minGuess.value); 
   maxValue = parseInt(maxGuess.value); 
   randomNumber = getRandomNumber(minValue, maxValue); 
-  console.log(randomNumber); 
 }
 
 function expandMinMax() {
@@ -101,25 +85,6 @@ function expandMinMax() {
   maxValue +=10; 
 }
 
-function initiateMultiPlayer(event) {
-  scoreCard.classList.toggle('multi-player-mode'); 
-}
-
 function guessCounter() {
   guessCount++; 
 }
-
-function switchPlayers() {
-    if (guessCount === 3) {
-      currentPlayer.innerText = "Player 2 It's Your Turn!";
-      guessCount = 0; 
-    } else if (guessCount === 3) {
-      currentPlayer.innerText = "Player 1 It's Your Turn!"; 
-      guessCount = 0;
-  }
-}
-
-
-
-
-
