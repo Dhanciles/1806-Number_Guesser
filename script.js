@@ -38,7 +38,8 @@ function clearInput(event) {
 
 function playGame(event) {
   event.preventDefault(); 
-  getRandomNumber();
+  checkRange(); 
+  getRandomNumber(min, max);
   displayGuess.innerText = userGuess.value;
   guessButton.disabled = true; 
   clearButton.disabled = true; 
@@ -54,13 +55,12 @@ function checkGuess(guess) {
   } else if (guess > randomNumber) {
     gameIntro.innerText = 'Your number is'; 
     gameFeedBack.innertext = 'Too High'; 
-  } else if (guess === randomNumber) {
+  } else if (guess === randomNumber) { 
     guessCounter(); 
     expandMinMax();
     randomNumber = getRandomNumber(minValue, maxValue);  
     gameIntro.innerText = 'Boom!'; 
     gameFeedBack.innerText = `You're A Genius...New Min: ${minValue} and New Max: ${maxValue}`; 
-    getRandomNumber(minValue, maxValue);
   }
 }
 
@@ -76,7 +76,7 @@ function enableButtons(event) {
   resetButton.disabled = false; 
 }
 
-function checkRange() {
+function checkRange(event) {
   event.preventDefault(); 
   minValue = parseInt(minGuess.value); 
   maxValue = parseInt(maxGuess.value); 
