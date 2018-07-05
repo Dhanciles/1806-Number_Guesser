@@ -8,12 +8,13 @@ var resetButton = document.querySelector('.reset-button');
 var rangeButton = document.querySelector('.submit-range'); 
 var multiPlayerButton = document.querySelector('.multi-player-button'); 
 var scoreCard = document.querySelector('.multi-player-mode');
-var currentPlayer = document.querySelector('.current-player'); 
+var currentPlayer = document.querySelector('.current-player');
+var player1Score = document.querySelector('.player1-score'); 
+var player2Score = document.querySelector('.player2-score');  
 var displayGuess = document.querySelector('.display-guess');
 var gameIntro = document.querySelector('.game-intro');
 var gameFeedBack = document.querySelector('.game-feedback');
 var winUpdate = expandMinMax()
-
 var guessCount = 0; 
 var minValue = 1; 
 var maxValue = 100; 
@@ -27,6 +28,7 @@ clearButton.addEventListener('click', clearInput);
 resetButton.addEventListener('click', resetGame);
 rangeButton.addEventListener('click', checkRange); 
 multiPlayerButton.addEventListener('click', initiateMultiPlayer); 
+guessButton.addEventListener('click', switchPlayers); 
 
 
 // Functions 
@@ -49,6 +51,7 @@ function playGame(event) {
   clearButton.disabled = true; 
   checkGuess(parseInt(userGuess.value));
   guessCounter(); 
+  switchPlayers(); 
   console.log(guessCount); 
   clearInput(event);
 }
@@ -100,18 +103,23 @@ function expandMinMax() {
 
 function initiateMultiPlayer(event) {
   scoreCard.classList.toggle('multi-player-mode'); 
-  switchPlayers(); 
 }
 
 function guessCounter() {
   guessCount++; 
 }
 
-// function switchPlayers() {
-//   guessCounter()
-//   if (guessCount >= 3) {
-//     currentPlayer.innerText = "Player 2 It's Your Turn!"; 
-//     guessCount = 0
-//   }
-// }
+function switchPlayers() {
+    if (guessCount === 3) {
+      currentPlayer.innerText = "Player 2 It's Your Turn!";
+      guessCount = 0; 
+    } else if (guessCount === 3) {
+      currentPlayer.innerText = "Player 1 It's Your Turn!"; 
+      guessCount = 0;
+  }
+}
+
+
+
+
 
