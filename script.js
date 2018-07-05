@@ -13,7 +13,9 @@ var winUpdate = expandMinMax()
 var guessCount = 0; 
 var minValue = 1; 
 var maxValue = 100; 
-var randomNumber = getRandomNumber(1, 100);  
+var randomNumber = getRandomNumber(1, 100); 
+
+console.log(randomNumber); 
 
 // Event Listeners 
 userGuess.addEventListener('keydown', enableButtons);
@@ -58,6 +60,7 @@ function checkGuess(guess) {
     randomNumber = getRandomNumber(minValue, maxValue);  
     gameIntro.innerText = 'Boom!'; 
     gameFeedBack.innerText = `You're A Genius...New Min: ${minValue} and New Max: ${maxValue}`; 
+    getRandomNumber(minValue, maxValue);
   }
 }
 
