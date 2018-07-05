@@ -14,21 +14,18 @@
       </h1>
     </header>
     <main class="game-play-area">
-      <section class="game-inputs-buttons">
-        <div class="multi-player-mode">
-          <p>Player 1 It's Your Turn!</p>
-          <table class="score-card">
-            <tr>
-              <td class="player1-score">Player 1: </td>
-            </tr>
-            <tr>
-              <td class="player2-score">Player 2: </td>
-            </tr>
-            <tr>
-              <td class="series-counter">Best of 3</td>
-            </tr>
+      <div class="multi-player-mode">
+        <p class="current-player">Player 1 It's Your Turn!</p>
+        <table class="score-card">
+          <tr>
+            <td class="player1">Player 1: <span class="player1-score"></span></td>
+          </tr>
+          <tr>
+            <td class="player2">Player 2: <span class="player2-score"></span> </td>
+          </tr>
           </table>
-        </div>
+      </div>
+      <section class="game-inputs-buttons">
         <form class="play-game">
           <input class="user-guess" type="number" name="user-guess" placeholder="Enter your guess" step="1">
           <br>

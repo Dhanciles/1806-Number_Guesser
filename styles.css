@@ -100,11 +100,20 @@ button:disabled {
   display: none;
 }
 
+.current-player {
+  margin-left: 8px; 
+}
+
 .score-card {
   background-color:#EB008D;
   color: black; 
   float: left;
   height: 100px; 
+  margin: 10px 25px;
   width: 100px 
+}
+
+.score-card td {
+  padding: 10px;
 }
 
